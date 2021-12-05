@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 const app =express();
 const categories = require('./routes/categories.js');
+const subcategories = require('./routes/subcategories.js');
 const cors = require("cors");
 
 mongoose.connect('mongodb://localhost/investor')
@@ -22,6 +23,8 @@ app.use('/categories', categories);
 app.get('/', (req, res) => {
     res.json('Hello!! Welcom on Investor Portal...');
 });
+
+app.use('/subcategories', subcategories);
 
 const port = process.env.PORT || 8080;
 app.listen({port}, () => console.log(`listning on port ${port}....`));

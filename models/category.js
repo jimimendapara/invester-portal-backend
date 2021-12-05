@@ -11,12 +11,12 @@ const categorySchema =new mongoose.Schema({
 const Category = mongoose.model('Category', categorySchema);
 
 
-const subCategorySchema = new mongoose.Schema({
-    names:String,
-    cat: {type: mongoose.Schema.Types.ObjectId, ref: 'Category'}
-})
+// const subCategorySchema = new mongoose.Schema({
+//     names:String,
+//     cat: {type: mongoose.Schema.Types.ObjectId, ref: 'Category'}
+// })
 
-const Subcategory = mongoose.model('Subcategory',subCategorySchema);
+// const Subcategory = mongoose.model('Subcategory',subCategorySchema);
 
 
 
@@ -42,6 +42,6 @@ exports.Category = Category;
 exports.validate = validateCategory;
 // exports.subvalidate = validateSubCategory;
 exports.categorySchema = categorySchema;
-exports.Subcategory = Subcategory;
-exports.subCategorySchema = subCategorySchema;
+// exports.Subcategory = Subcategory;
+// exports.subCategorySchema = subCategorySchema;
 

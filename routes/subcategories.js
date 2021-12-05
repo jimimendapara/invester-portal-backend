@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
-const {Category, validate, Subcategory, subvalidate} = require('../models/category.js');
+const {Subcategory, subvalidate} = require('../models/subcategory.js');
 
 // const category = [
 //    {
@@ -22,10 +22,10 @@ const {Category, validate, Subcategory, subvalidate} = require('../models/catego
 // ]
 
 
-router.get("/", async (req, res) => {
-     const categories = await Category.find().sort('name');
-    res.send(categories);
-});
+// router.get("/", async (req, res) => {
+//      const subCategories = await SubCategory.find().sort('name');
+//     res.send(subCategories);
+// });
 
 router.get("/", async (req, res) => {
     const subCategories = await Subcategory.find().sort('name');
@@ -33,14 +33,14 @@ router.get("/", async (req, res) => {
 });
 
 
-router.get("/:id", async (req, res) => {
-    const category = await Category.findById(req.params.id);
+// router.get("/:id", async (req, res) => {
+//     const category = await Category.findById(req.params.id);
 
-   //const genre = genres.find((c)=> c.id == parseInt(req.params.id));
-   if(!category) return res.status(404).send("The category was not found");
+//    //const genre = genres.find((c)=> c.id == parseInt(req.params.id));
+//    if(!category) return res.status(404).send("The category was not found");
    
-   res.send(category);
-})
+//    res.send(category);
+// })
 
 // router.post("/", async (req, res) => {
 //     const {error} = validate(req.body);
